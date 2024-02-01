@@ -16,7 +16,6 @@ function AuthForm() {
 
   const isSubmitting = navigation.state === "submitting";
 
-  console.log(isSubmitting);
   return (
     <>
       <Form method="post" className={classes.form}>
@@ -31,11 +30,23 @@ function AuthForm() {
         {data && data.message && <p>{data.message}</p>}
         <p>
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" required />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            autoComplete="on"
+            required
+          />
         </p>
         <p>
           <label htmlFor="image">Password</label>
-          <input id="password" type="password" name="password" required />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            autoComplete="on"
+            required
+          />
         </p>
         <div className={classes.actions}>
           <Link to={`?mode=${isLogin ? "signup" : "login"}`}>
